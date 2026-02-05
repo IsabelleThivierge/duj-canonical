@@ -29,3 +29,7 @@ Formalization, simulations, and applied instantiations will be released in subse
 
 ## Priority note
 This repository establishes the public existence and conceptual scope of DUJ as of **2026-02-04**.
+## Early Formalizations
+
+- **ACTC v0.1** — A minimal toy formalism demonstrating that when system influence capacity exceeds human counter-control, collapse of human viability is inevitable regardless of downstream alignment mechanisms.  
+  See [`ACTC_v0.1`](docs/toy-formalisms/ACTC_v0.1.md).
