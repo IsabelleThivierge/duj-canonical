@@ -1,6 +1,16 @@
 # DUJ — Dynamiques Unifiées des Jetons
 *(Unified Dynamics of Tokens)*
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Scope](#scope)
+- [Non-Goals](#non-goals)
+- [Positioning](#positioning)
+- [Early Formalizations](#early-formalizations)
+- [Status](#status)
+- [License](#license)
+
 ## Abstract
 DUJ (Dynamiques Unifiées des Jetons) is a substrate-level framework for structural alignment and system viability.  
 It treats alignment not as preference matching or post-hoc control, but as the preservation of invariants governing multi-agent coordination across time. Human agency is modeled as a structural viability condition: systems that marginalize it destabilize through invariant violation rather than policy choice.
