@@ -1,6 +1,10 @@
 # DUJ — Dynamiques Unifiées des Jetons
 *(Unified Dynamics of Tokens)*
 
+This project is stewarded by the DUJ-FEITH Foundation.
+
+Foundation: https://dujfeithfoundation.org
+
 ## Table of Contents
 
 - [Overview](#overview)
