@@ -1,3 +1,12 @@
+## 🧠 DUJ — Deterministic Universal Junction  
+**A coordination kernel for multi-agent intelligence systems**
+
+---
+
+## 🖼 System Architecture
+
+![DUJ Architecture](duj-hierarchy-v2.PNG)
+
 # DUJ — Dynamiques Unifiées des Jetons
 *(Unified Dynamics of Tokens)*
 
