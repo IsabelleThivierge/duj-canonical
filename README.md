@@ -7,6 +7,12 @@
 
 ![DUJ Architecture](duj-hierarchy-v2.PNG)
 
+### 🔷 What is DUJ?
+
+DUJ is a coordination layer that sits above AI systems and governs interactions between independent agents.
+
+It enforces invariant-preserving system states through deterministic reconciliation.
+
 # DUJ — Dynamiques Unifiées des Jetons
 *(Unified Dynamics of Tokens)*
 
