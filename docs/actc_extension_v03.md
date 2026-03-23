@@ -15,7 +15,7 @@ We show the answer is no. Individual admissibility is not closed under compositi
 
 ACTC v0.1 establishes that when  
 \[
-U > A + \sigma
+U > A + σ
 \]  
 collapse is inevitable.
 
