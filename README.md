@@ -2,7 +2,7 @@
 
 *(Dynamique Unifiée des Jetons)*
 
-A coordination kernel for multi-agent intelligence systems.
+**A coordination kernel for multi-agent intelligence systems**
 ---
 
 ## 🖼 System Architecture
