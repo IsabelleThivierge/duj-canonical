@@ -42,7 +42,7 @@ Viability requires:
 
 |x_t| ≤ V
 
-Each agent contributes a signed influence on the shared state. The system includes a stabilizing force that counteracts drift.
+Each agent contributes a **signed** influence on the shared state. The system includes a stabilizing force that counteracts drift.
 
 Single-agent admissibility (ADI):
 
@@ -52,7 +52,7 @@ Single-agent admissibility (ADI):
 
 ## 3. Baseline Lemma (Additive Case)
 
-Lemma. Individual admissibility does not imply joint admissibility under additive composition.
+**Lemma.** Individual admissibility does not imply joint admissibility under additive composition.
 
 Two agents can each satisfy ADI individually while their combined influence exceeds system capacity, leading to viability failure.
 
@@ -62,7 +62,7 @@ This case is structurally correct but arithmetically thin. The main proposition 
 
 ## 4. Main Proposition (Interaction-Induced Composition Failure)
 
-Proposition.  
+**Proposition.**  
 There exist agent influence laws u^(1), u^(2), each satisfying ADI, such that joint system dynamics admit trajectories exiting the viability set due solely to interaction terms, even when linear aggregate influence is zero.
 
 ### Setup
@@ -115,7 +115,7 @@ The simulation directly instantiates the analytical dynamics above. Parameters a
 ### Parameter regime
 
 | Parameter | Value |
-|----------|------|
+|---|---:|
 | k (stabilizer gain) | 0.3 |
 | V (viability threshold) | 10.0 |
 | A (agent capacity) | 1.0 |
