@@ -1,4 +1,4 @@
-## From Single-Agent ADI to Multi-Agent Composition Failure
+# From Single-Agent ADI to Multi-Agent Composition Failure
 
 ACTC Extension Note — DUJ v0.3
 
@@ -14,7 +14,9 @@ We show the answer is no. Individual admissibility is not closed under compositi
 
 ## 1. Motivation
 
-ACTC v0.1 establishes that when U > A + σ,
+ACTC v0.1 establishes that when
+
+U > A + σ
 
 collapse is inevitable.
 
@@ -37,97 +39,93 @@ Viability requires:
 
 |x_t| ≤ V
 
-Each agent contributes an influence on the shared task-state. The system includes a stabilizing force that counteracts drift.
+Each agent contributes an influence on the shared state. The system includes a stabilizing force that counteracts drift.
 
 ---
 
-## 3. Baseline Lemma
+## 3. Baseline Lemma (Additive Case)
 
 Individual admissibility does not imply joint admissibility.
 
-(Additive case — omitted for brevity)
+(Additive case — omitted for brevity.)
 
 ---
 
-## 4. Main Proposition
+## 4. Main Proposition (Interaction-Induced Composition Failure)
 
-Proposition.  
-There exist agent influence laws u1 and u2, each satisfying ADI, such that joint dynamics exit viability solely due to interaction terms, even when linear aggregate influence is zero.
+**Proposition.**  
+There exist agent influence laws u^(1), u^(2), each satisfying ADI, such that joint dynamics exit viability solely due to interaction terms, even when linear aggregate influence is zero.
 
 ### Setup
 
-u1 = A − Δ  
-u2 = −(A − Δ)
+u^(1) = A − Δ  
+u^(2) = −(A − Δ)
 
-### Dynamics
+Joint dynamics:
 
-x(t+1) = x(t) − k·x(t) + u1 + u2 + γ·u1·u2 + ε
+x_{t+1} = x_t − k x_t + u^(1) + u^(2) + γ u^(1) u^(2) + ε_t
 
-### Key Observation
+### Linear cancellation
 
-The linear terms cancel:
+u^(1) + u^(2) = 0
 
-u1 + u2 = 0
+### Interaction term
 
-However, the interaction term remains:
+γ u^(1) u^(2) = −γ (A − Δ)^2
 
-γ·u1·u2 = −γ(A − Δ)²
+### Reduced dynamics
 
-This introduces a constant drift.
+x_{t+1} = x_t − k x_t − γ (A − Δ)^2 + ε_t
 
-### Shifted Equilibrium
+### Shifted equilibrium
 
-x* = γ(A − Δ)² / k
+x* = γ (A − Δ)^2 / k
 
-If x* > V, the system exits the viability region.
+If x* > V, the system exits viability.
 
-### Conclusion
+### Key observation
 
-Neither agent alone produces failure.  
-Failure emerges from interaction structure.
+The drift is not produced by either agent individually. It emerges purely from interaction.
 
-Admissibility is not closed under composition.
+### Corollary
+
+Admissibility is not closed under composition and not decomposable: global failure can occur with no local violation.
 
 ---
 
 ## 5. Simulation
 
-The simulation instantiates the analytical dynamics.
+Parameters are chosen such that:
 
-| Parameter | Value |
-|----------|------|
-| k (stabilizer gain) | 0.3 |
-| V (viability threshold) | 10.0 |
-| A (agent capacity) | 1.0 |
-| Δ (robustness margin) | 0.1 |
-| γ (interaction coupling) | 4.0 |
-| σ (noise) | 0.05 |
-| T_max | 500 |
-| n_trials | 300 |
+x* = γ (A − Δ)^2 / k > V
 
-For these values:
+This ensures the interaction-induced failure regime is active.
 
-x* = 10.8 > V
+Three conditions:
 
-Single agents remain stable.  
-Joint system collapses.
+1. Agent 1 alone  
+2. Agent 2 alone  
+3. Joint system  
+
+Expected result:
+
+- Single-agent: no collapse  
+- Joint system: high collapse probability  
 
 ---
 
 ## 6. Connection to DUJ
 
-This result shows that coordination constraints must operate above individual agents.
+This result shows that enforcing ADI locally is insufficient.
 
-Local compliance does not imply global viability.
+Failure emerges from interaction structure, not individual behavior.
 
-DUJ acts as a coordination layer enforcing constraints on joint interaction structure rather than individual agents.
+DUJ therefore operates at the level of aggregate influence, enforcing constraints on the joint system rather than on individual agents.
 
 ---
 
 ## 7. Scope and Limits
 
-The model is minimal and structural.
+The model is minimal and structural. The interaction term γ u^(1) u^(2) is a tractable example, not a claim about all real systems.
 
-The interaction term is illustrative, not exhaustive.
-
-Grounding the variables in real systems is left for future work.
+Grounding x_t in a concrete measurable system is left for future work.
