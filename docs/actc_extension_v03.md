@@ -1,5 +1,6 @@
-# From Single-Agent ADI to Multi-Agent Composition Failure  
-**ACTC Extension Note — DUJ v0.3**
+## From Single-Agent ADI to Multi-Agent Composition Failure
+
+ACTC Extension Note — DUJ v0.3
 
 ---
 
@@ -13,18 +14,15 @@ We show the answer is no. Individual admissibility is not closed under compositi
 
 ## 1. Motivation
 
-ACTC v0.1 establishes that when  
-\[
-U > A + σ
-\]  
+ACTC v0.1 establishes that when U > A + σ,
+
 collapse is inevitable.
 
-ADI enforces:  
-\[
-U \le A - \Delta
-\]
+ADI enforces the constraint:
 
-Question:  
+U ≤ A − Δ
+
+Key question:  
 If each agent satisfies ADI individually, is the system safe?
 
 Answer: No.
@@ -33,17 +31,13 @@ Answer: No.
 
 ## 2. Variable Interpretation
 
-Let \(x_t \in \mathbb{R}\) denote shared task-state consistency.
+Let x_t ∈ ℝ denote shared task-state consistency.
 
 Viability requires:
-\[
-|x_t| \le V
-\]
 
-Dynamics:
-\[
-x_{t+1} = x_t - k x_t + \text{influences} + \varepsilon_t
-\]
+|x_t| ≤ V
+
+Each agent contributes an influence on the shared task-state. The system includes a stabilizing force that counteracts drift.
 
 ---
 
@@ -57,77 +51,83 @@ Individual admissibility does not imply joint admissibility.
 
 ## 4. Main Proposition
 
-**Proposition.**  
-There exist agent influence laws \(u^{(1)}, u^{(2)}\), each satisfying ADI, such that joint dynamics exit viability solely due to interaction terms, even when linear aggregate influence is zero.
+Proposition.  
+There exist agent influence laws u1 and u2, each satisfying ADI, such that joint dynamics exit viability solely due to interaction terms, even when linear aggregate influence is zero.
 
 ### Setup
 
-\[
-u^{(1)} = A - \Delta,\quad u^{(2)} = -(A - \Delta)
-\]
+u1 = A − Δ  
+u2 = −(A − Δ)
 
-Joint dynamics:
+### Dynamics
 
-\[
-x_{t+1} = x_t - k x_t + u^{(1)} + u^{(2)} + \gamma u^{(1)} u^{(2)} + \varepsilon_t
-\]
+x(t+1) = x(t) − k·x(t) + u1 + u2 + γ·u1·u2 + ε
 
-### Linear cancellation
+### Key Observation
 
-\[
-u^{(1)} + u^{(2)} = 0
-\]
+The linear terms cancel:
 
-### Interaction term
+u1 + u2 = 0
 
-\[
-u^{(1)} u^{(2)} = -(A-\Delta)^2
-\]
+However, the interaction term remains:
 
-### Reduced dynamics
+γ·u1·u2 = −γ(A − Δ)²
 
-\[
-x_{t+1} = x_t - k x_t - \gamma (A-\Delta)^2 + \varepsilon_t
-\]
+This introduces a constant drift.
 
-### Equilibrium
+### Shifted Equilibrium
 
-\[
-x^* = \frac{\gamma (A - \Delta)^2}{k}
-\]
+x* = γ(A − Δ)² / k
 
-If:
-\[
-x^* > V
-\]
+If x* > V, the system exits the viability region.
 
-then viability fails.
+### Conclusion
+
+Neither agent alone produces failure.  
+Failure emerges from interaction structure.
+
+Admissibility is not closed under composition.
 
 ---
 
 ## 5. Simulation
 
-Parameters chosen such that:
+The simulation instantiates the analytical dynamics.
 
-\[
-x^* > V
-\]
+| Parameter | Value |
+|----------|------|
+| k (stabilizer gain) | 0.3 |
+| V (viability threshold) | 10.0 |
+| A (agent capacity) | 1.0 |
+| Δ (robustness margin) | 0.1 |
+| γ (interaction coupling) | 4.0 |
+| σ (noise) | 0.05 |
+| T_max | 500 |
+| n_trials | 300 |
+
+For these values:
+
+x* = 10.8 > V
+
+Single agents remain stable.  
+Joint system collapses.
 
 ---
 
 ## 6. Connection to DUJ
 
-Local admissibility ≠ global viability.  
-Interaction structure induces failure.
+This result shows that coordination constraints must operate above individual agents.
 
-DUJ operates at the level of:
-> aggregate interaction constraints.
+Local compliance does not imply global viability.
 
----
-
-## 7. Scope
-
-Minimal model.  
-Interaction term illustrative, not exhaustive.
+DUJ acts as a coordination layer enforcing constraints on joint interaction structure rather than individual agents.
 
 ---
+
+## 7. Scope and Limits
+
+The model is minimal and structural.
+
+The interaction term is illustrative, not exhaustive.
+
+Grounding the variables in real systems is left for future work.
