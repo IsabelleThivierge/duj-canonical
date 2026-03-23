@@ -1,4 +1,6 @@
-DUJ (Dynamique Unifiée des Jetons) — Deterministic Universal Junction
+## 🧠 DUJ — Deterministic Universal Junction
+
+*(Dynamique Unifiée des Jetons)*
 
 A coordination kernel for multi-agent intelligence systems.
 ---
