@@ -10,3 +10,9 @@ GPU observables → measurable quantities → DUJ variables
 - γ̂ interaction coefficient from latency contention
 - D_lineage from register spill degradation
 - τ̂_ij from latency-ratio dilation sweeps
+
+## Formal Anchor Figure
+
+Figure 1 visualizes the v0.3 composition failure proposition: two individually ADI-compliant agents remain viable in isolation, while the jointly coupled trajectory exits the viability set due to the interaction cross-term γ.
+
+![DUJ v0.3 Composition Failure](composition_failure_v03.png)
