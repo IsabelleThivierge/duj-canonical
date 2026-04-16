@@ -4,6 +4,14 @@
 
 **A coordination kernel for multi-agent intelligence systems**
 ---
+## Latest Research Note
+
+**DUJ v0.3a — Deterministic Hierarchy Note on Jetson Orin Nano**
+
+First deterministic edge-hardware stress results for the DUJ hierarchical substrate on NVIDIA Jetson Orin Nano Super.
+
+[Read the note](docs/research_notes/v0.3a_EDGE_RESULTS.md)
+---
 
 ## 🖼 System Architecture
 
